@@ -1,9 +1,21 @@
+img {
+  width: 150px;
+  clip-path: circle();
+}
+p {
+  font-family: var(--font-family-paragraph);
+  font-size: 15px;
+}
+h4 {
+  text-transform: capitalize;
+}
+h6 {
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
 .review {
   max-width: 600px;
   margin: 80px auto;
   background-color: aliceblue;
   box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
-}
-img {
-  width: 150px;
 }

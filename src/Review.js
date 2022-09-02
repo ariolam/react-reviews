@@ -3,24 +3,35 @@ import data from "./data";
 import "./Review.css";
 
 function Review() {
-  const [reviews, setReviews] = useState(data);
+  const [index, setIndex] = useState(0);
 
-  //   function showNext(id) {
-  //     //setReviews();
-  //     console.log(id);
-  //   }
+  const { name, job, image, text } = data[index];
 
-  const review = reviews[0];
+  const showNext = () => {
+    setIndex((index) => {
+      let newIndex = index + 1;
+      return newIndex;
+    });
+  };
 
+  const showPrevious = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      return newIndex;
+    });
+  };
   return (
     <div className="review">
       <main>
         <div className="single-review">
-          <img src={review.image} alt={review.name} />
-          <h4>{review.name}</h4>
-          <h6>{review.job}</h6>
-          <p>{review.text}</p>
-          <button onClick={() => setReviews([review.id + 1])}> Next</button>
+          <img src={image} alt={name} />
+          <h4>{name}</h4>
+          <h6>{job}</h6>
+          <p>{text}</p>
+          <div>
+            <button onClick={showPrevious}> &#8249;</button>
+            <button onClick={showNext}> &#8250;</button>
+          </div>
         </div>
       </main>
     </div>
