@@ -7,17 +7,26 @@ function Review() {
 
   const { name, job, image, text } = data[index];
 
+  const showSequence = (number) => {
+    if (number > data.length - 1) {
+      return 0;
+    }
+    if (number < 0) {
+      return data.length - 1;
+    }
+    return number;
+  };
   const showNext = () => {
     setIndex((index) => {
       let newIndex = index + 1;
-      return newIndex;
+      return showSequence(newIndex);
     });
   };
 
   const showPrevious = () => {
     setIndex((index) => {
       let newIndex = index - 1;
-      return newIndex;
+      return showSequence(newIndex);
     });
   };
   return (
