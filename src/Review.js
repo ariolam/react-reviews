@@ -29,6 +29,14 @@ function Review() {
       return showSequence(newIndex);
     });
   };
+  const showRandom = () => {
+    let randomNumber = Math.floor(Math.random() * data.length);
+    if (randomNumber === index) {
+      randomNumber = index + 1;
+    }
+    console.log(randomNumber);
+    setIndex(showSequence(randomNumber));
+  };
   return (
     <div className="review">
       <main>
@@ -42,6 +50,7 @@ function Review() {
             <button onClick={showNext}> &#8250;</button>
           </div>
         </div>
+        <button onClick={showRandom}> Surprise me </button>
       </main>
     </div>
   );
