@@ -1,7 +1,11 @@
 img {
   width: 150px;
   clip-path: circle();
+  position: relative;
+  width: 150px;
+  height: 225px;
 }
+
 p {
   font-family: var(--font-family-paragraph);
   font-size: 15px;
@@ -13,9 +17,29 @@ h6 {
   text-transform: uppercase;
   color: var(--secondary-color);
 }
+
 .review {
   max-width: 600px;
   margin: 80px auto;
   background-color: aliceblue;
   box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+}
+.quote-icon {
+  position: absolute;
+  right: 640px;
+  width: 282px;
+  color: var(--secondary-color);
+  margin-top: 27px;
+}
+.prev-btn,
+.next-btn {
+  color: var(--secondary-color);
+  background: transparent;
+  font-size: 17px;
+  font-weight: 800;
+}
+.random-btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 500;
 }

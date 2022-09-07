@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import data from "./data";
+import { BsChatRightQuote } from "react-icons/bs";
 import "./Review.css";
 
 function Review() {
@@ -34,23 +35,38 @@ function Review() {
     if (randomNumber === index) {
       randomNumber = index + 1;
     }
-    console.log(randomNumber);
     setIndex(showSequence(randomNumber));
   };
   return (
     <div className="review">
       <main>
         <div className="single-review">
-          <img src={image} alt={name} />
+          <div className="img-container">
+            {" "}
+            <img src={image} alt={name} />
+            <span className="quote-icon">
+              {" "}
+              <BsChatRightQuote size={35} />{" "}
+            </span>
+          </div>
           <h4>{name}</h4>
           <h6>{job}</h6>
           <p>{text}</p>
           <div>
-            <button onClick={showPrevious}> &#8249;</button>
-            <button onClick={showNext}> &#8250;</button>
+            <button className="prev-btn border-0" onClick={showPrevious}>
+              {" "}
+              &#8249;
+            </button>
+            <button className="next-btn ms-3 border-0" onClick={showNext}>
+              {" "}
+              &#8250;
+            </button>
           </div>
         </div>
-        <button onClick={showRandom}> Surprise me </button>
+        <button className="random-btn mt-2 mb-2 border-0" onClick={showRandom}>
+          {" "}
+          Surprise me{" "}
+        </button>
       </main>
     </div>
   );
